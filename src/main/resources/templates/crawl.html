@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/head :: head"></div>
+<link rel="stylesheet" type="text/css" th:href="@{/chartist/chartist.css}"/>
+<style>
+    .ct-series-a .ct-bar {
+        /* Colour of your bars */
+        stroke: #2A3F54;
+        /* The width of your bars */
+        stroke-width: 20px;
+
+    }
+    .ct-label {
+        font-size: 12px !important;
+    }
+
+</style>
+
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+
+        <div th:replace="fragments/menu :: menu"></div>
+
+        <!-- page content -->
+        <div class="right_col" role="main" style="min-height: 1172px;">
+            <div class="row tile_count">
+                <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-hand-rock-o"></i> Match Crawled</span>
+                    <div class="count" id="match_crawled">2000</div>
+                    <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i>Players Crawled</span>
+                    <div class="count" id="player_crawled">835</div>
+                    <!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>-->
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-area-chart"></i>Match Detail Crawled</span>
+                    <div class="count green" id="match_detail_crawled">20,000</div>
+                    <!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>-->
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-users"></i>Team Crawled</span>
+                    <div class="count" id="team_crawled">85</div>
+                    <!--<span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>-->
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">Match Count</div>
+                        <div class="x_content">
+                            <div id="matchcountstat">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">Most Active Team (by Match Count)</div>
+                        <div class="x_content">
+                            <div id="activeteamstat" style="height:300px">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /page content -->
+
+
+        <!-- footer content -->
+        <div th:replace="fragments/footer :: footer"></div>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<div th:replace="fragments/javascript :: javascript"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+
+<script th:src="@{/jqplot/jquery.jqplot.js}"></script>
+<script th:src="@{/jqplot/plugins/jqplot.dateAxisRenderer.js}"></script>
+<script th:src="@{/jqplot/plugins/jqplot.barRenderer.js}"></script>
+<script th:src="@{/jqplot/plugins/jqplot.categoryAxisRenderer.js}"></script>
+<script th:src="@{/jqplot/plugins/jqplot.pointLabels.js}"></script>
+<script th:src="@{/chartist/chartist.js}"></script>
+
+<script th:src="@{/application/crawl.js}"></script>
+
+</body>
+</html>

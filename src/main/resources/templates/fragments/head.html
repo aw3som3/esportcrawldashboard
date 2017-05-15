@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="head" th:remove="tag">
+    <head>
+        <title>Spring Boot Thymeleaf Hello World Example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/css/font-awesome.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/theme/css/custom.css}"/>
+        <style>
+            .imgintable{
+                height:25px;
+            }
+        </style>
+    </head>
+</div>
+</body>
+</html>

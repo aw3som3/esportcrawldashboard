@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/head :: head"></div>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+
+        <div th:replace="fragments/menu :: menu"></div>
+
+        <!-- page content -->
+        <div class="right_col" role="main" style="min-height: 1172px;">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Dota Teams List</h3>
+                    </div>
+
+
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Most Popular Teams</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="loader">
+                                    <img th:src="@{/images/loading.gif}"/>
+                                </div>
+                                <table class="table" id="matches_table">
+                                    <thead>
+                                    <tr>
+                                        <th>Team id</th>
+                                        <th>Logo</th>
+                                        <th>Team Name</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody></tbody>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="clearfix"></div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <div th:replace="fragments/footer :: footer"></div>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<div th:replace="fragments/javascript :: javascript"></div>
+<script th:src="@{/application/teams.js}"></script>
+
+</body>
+</html>
